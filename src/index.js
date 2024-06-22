@@ -8,9 +8,9 @@ const mainCard = document.querySelector('.card-main');
 const cards = document.querySelectorAll('.card');
 const loading = document.querySelector('.loading');
 
-async function getWeather(city) {
+async function getWeather(location) {
     try {
-        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=3`, { mode: 'cors' });
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=3`, { mode: 'cors' });
         let data = await response.json();
         return ({
             location: data.location.name,
@@ -27,7 +27,7 @@ async function getWeather(city) {
 async function submitCity(e = "") {
     if (e) e.preventDefault();
     turnLoading("on");
-    const data = await getWeather(searchBar.value ? searchBar.value : "phoenix");
+    const data = await getWeather(searchBar.value ? searchBar.value : "London");
     displayWeather(data);
     turnLoading("off");
 }
@@ -52,10 +52,10 @@ function displayWeather(data) {
     mainCardImg.src = 'https:' + data.currentIcon;
 
     cards.forEach((card, i) => {
-        if (counter == 2) counter = 0;
+        if (counter == 6) counter = 0;
         else counter += 1;
 
-        const cardData = data.forecast[i + 1];
+        const cardData = data.forecast[i];
 
         const cardWeek = card.querySelector('.card-date');
         const cardHigh = card.querySelector('.card-weather span');
