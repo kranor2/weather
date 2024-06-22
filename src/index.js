@@ -71,11 +71,11 @@ function displayWeather(data) {
 
 function turnLoading(turn = "on") {
     if (turn == "on") {
-        loading.classList.remove('hidden');
-        weatherCards.classList.add('hidden');
+        loading.hidden = false;
+        weatherCards.hidden = true;
     } else {
-        loading.classList.add('hidden');
-        weatherCards.classList.remove('hidden');
+        loading.hidden = true;
+        weatherCards.hidden = false;
     }
 }
 
