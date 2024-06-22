@@ -43,13 +43,13 @@ function displayWeather(data) {
     const mainCardDate = mainCard.querySelector('.card-date');
     const mainCardCity = mainCard.querySelector('.card-city');
     const mainCardWeather = mainCard.querySelector('.card-weather span');
-    const mainCardImg = mainCard.querySelector('.card-img');
+    const mainCardImg = mainCard.querySelector('#card-img');
 
     mainCardWeek.textContent = daysOfWeek[date.getDay()];
     mainCardDate.textContent = date.getDate() + ', ' + month[date.getMonth()];
     mainCardCity.textContent = data.locationName;
     mainCardWeather.textContent = Math.round(data.currentTemp);
-    mainCardImg.src = 'https://' + data.currentIcon;
+    mainCardImg.src = 'https:' + data.currentIcon;
 
     cards.forEach((card, i) => {
         if (counter == 2) counter = 0;
@@ -65,16 +65,16 @@ function displayWeather(data) {
         cardWeek.textContent = daysOfWeek[counter];
         cardHigh.textContent = Math.round(cardData.day.maxtemp_f);
         cardLow.textContent = Math.round(cardData.day.mintemp_f);
-        cardImg.src = 'https://' + cardData.day.condition.icon;
+        cardImg.src = 'https:' + cardData.day.condition.icon;
     });
 }
 
 function turnLoading(turn = "on") {
     if (turn == "on") {
-        loadingBar.classList.remove('hidden');
+        loading.classList.remove('hidden');
         weatherCards.classList.add('hidden');
     } else {
-        loadingBar.classList.add('hidden');
+        loading.classList.add('hidden');
         weatherCards.classList.remove('hidden');
     }
 }
