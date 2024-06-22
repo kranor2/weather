@@ -1,0 +1,175 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+    background-color: #33274e;
+}
+
+.header {
+    padding: 1% 4%;
+    background-color: #5f4c8b;
+    display: flex;
+    align-items: center;
+    gap: 1%;
+}
+
+.header-text {
+    color: #ebedeb;
+    font-size: 5rem;
+}
+
+.weather {
+    background-image:url(./lightning-bkgd.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 85vh;
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.form {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    display: flex;
+    align-items: center;
+}
+
+.city-search {
+    padding: 3% 6%;
+    width: 30vw;
+    background-color: #edebed;
+    color: #261e3b;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 1.25rem;
+}
+
+.city-submit {
+    margin-left: -12%;
+    background-color: #a89ad8;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1.25rem;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 3% 6%;
+}
+
+.city-submit:hover {
+    cursor: pointer;
+    background-color: #8d71ab;
+}
+
+.cards {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    width: 60vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+
+.card-main {
+    color: #edebed;
+}
+
+.card-main .card-header {
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+    font-size: 2.25rem;
+    font-weight: bold;
+    padding: 0.5% 2%;
+}
+
+.card-main .card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-main .card-body {
+    padding: 4% 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1%;
+}
+
+.card {
+    color: #edebed;
+    font-size: 1.5rem;
+}
+
+.card .card-image {
+    margin-bottom: 4%;
+}
+
+.card .card-weather {
+    font-weight: bold;
+    font-size: 4%;
+}
+
+.card-main .card-body .card-body-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4%;
+}
+
+.card-main .card-body .card-body-info .card-weather {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.card-header, .card-banner {
+    background-color: #5f4c8b;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-body {
+    background-color: #22121c;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:nth-child(even) .card-body {
+    background-color: #22121c;
+}
+
+.card:nth-child(even) .card-header {
+    background-color: #2b1d28;
+}
+
+.loading {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    font-size: 5rem;
+    color: #edebed;
+}
+
+#header-logo {
+    width: 5em;
+}
